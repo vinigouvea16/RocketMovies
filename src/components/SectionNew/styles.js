@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  margin: 28px 5%;
-  overflow-y: scroll;
+  // margin: 28px 5%;
+  // overflow-y: scroll;
   
-  /* >h2{
+  >h2{
     color: ${({theme})=>theme.COLORS.GRAY_100};
     font-weight: 400;
     font-size: 20px;
-    padding-bottom: 24px;
-  } */
+    padding: 40px 0 0 0;
+  } 
 
   &::-webkit-scrollbar{
     width: 8px;

@@ -3,7 +3,7 @@
 import { Container, Rating } from "./styles";
 import { AiFillStar, AiOutlineStar} from "react-icons/ai"
 import { FiClock } from "react-icons/fi"
-import { Tag } from "../Tag";
+import { TagDetails } from "../TagDetails";
 
 // eslint-disable-next-line react/prop-types
 export function MovieInfo({ data, ...rest }){
@@ -33,7 +33,7 @@ export function MovieInfo({ data, ...rest }){
         data.tags &&
         <footer>
           {
-            data.tags.map(tag => <Tag key={tag.id} title={tag.name} />)
+            data.tags.map(tag => <TagDetails key={tag.id} title={tag.name} />)
           }
         </footer>
       }

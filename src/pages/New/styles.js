@@ -32,7 +32,7 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-  max-width: 1137px;
+  width: 90%;
   margin: 38px auto;
 
   >header{
@@ -42,7 +42,7 @@ export const Form = styled.form`
     margin-bottom: 36px;
   
     >h1{
-    font-weight: 500;
+    font-weight: 400;
     font-size: 36px;
   }
     a{
@@ -53,10 +53,8 @@ export const Form = styled.form`
   
   > footer{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     gap: 40px;
+    margin-bottom: 40px
   }
   .inputs{
     display: flex;
@@ -67,14 +65,11 @@ export const Form = styled.form`
 
 export const Erasemovie = styled.button`
    background-color: ${({theme})=> theme.COLORS.BACKGROUND_4};
-   border: none;
-   border-radius: 8px;
    color: ${({theme})=> theme.COLORS.PINK};
-   font-size: 16px;
-   font-weight: 500;
-   padding: 16px 200px;
-   width: 700px;
-   height: 56px;
-   display: inline-flex;
-   margin-top: 16px;
+   border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    height: 56px;
+    margin-top: 16px;
 `;

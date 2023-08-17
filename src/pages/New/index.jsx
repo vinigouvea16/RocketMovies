@@ -3,7 +3,7 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/Textarea";
 import { NoteItem } from "../../components/NoteItem";
-import { Section } from "../../components/Section";
+import { SectionNew } from "../../components/SectionNew";
 import { Button } from "../../components/Button";
 import { FiArrowLeft } from "react-icons/fi"
 import { Container, Form, Erasemovie } from "./styles";
@@ -27,16 +27,16 @@ export function New(){
 
             </div>
             <Textarea placeholder="Observações" />
-
-              <Section title="Marcadores">
+          
+              <SectionNew title="Marcadores">
                 <div className="tags">
               <NoteItem value="Insidious"/>
               <NoteItem placeholder="Novo marcador" isNew />
                 </div>
-              </Section>
+              </SectionNew>
               <footer>
               <Erasemovie>Excluir Filme</Erasemovie>
-              <Button title="Salvar"/>
+              <Button title="Salvar Alterações"/>
               </footer>
           </Form>
         </main>

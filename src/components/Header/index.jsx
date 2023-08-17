@@ -1,7 +1,11 @@
 import { Container, Profile, Logout, Brand } from "./style";
 import { Input } from '../../components/Input';
-export function Header(){
+import { useAuth } from "../../hooks/auth";
 
+
+
+export function Header(){
+  const { logOut } = useAuth();
   return(
     <Container>
       <Brand to="/">
@@ -17,7 +21,9 @@ export function Header(){
 
         <div>
           <strong>Vinicius Gouvea</strong>
-         <Logout>
+         <Logout
+         
+         onClick={logOut}>
           sair
          </Logout>
         </div>

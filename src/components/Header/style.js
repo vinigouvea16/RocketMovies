@@ -5,7 +5,6 @@ export const Container = styled.header`
 
   display: flex;
   width: 100%;
-  padding: 24px 123px;
   align-items: center;
   gap: 64px;
   height: 116px;
@@ -14,8 +13,12 @@ export const Container = styled.header`
   border-bottom-style: solid;
   border-bottom-color: ${({theme})=>theme.COLORS.GRAY_300};
 
+  >div{
+    display:flex;
+    flex-direction: row-reverse;
+  }
 
-  padding: 0 80px;
+  padding: 0 90px;
   >h2{
     color:  ${({theme})=> theme.COLORS.PINK};
   }
@@ -26,7 +29,6 @@ export const Profile = styled(Link)`
   display: flex;
   flex-direction: row-reverse;
 
-  height: 68px;
   align-items: center;
   gap: 9px;
   flex-shrink: 0;
@@ -63,4 +65,5 @@ export const Brand = styled(Link)`
   font-size: 24px;
   font-family: Roboto Slab;
   font-weight: 700;
+  padding-left: 3px;
 `;

@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: grid;
   width: 100%;
   height: 100vh;
-
+  
   display: grid;
   background-color: ${({theme})=>theme.COLORS.BACKGROUND_3};
 
@@ -17,7 +17,7 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 63px auto 0;
-  width: 1121px;
+  width: 89%;
 `;
 
 export const NewMovie = styled(Link)`

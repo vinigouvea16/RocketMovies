@@ -10,5 +10,5 @@ export const Container = styled.span`
   font-size: 12px;
   color: ${({theme})=>theme.COLORS.TEXTTAG};
 
-  background-color: ${({theme})=>theme.COLORS.GRAY_TAG};
+  background-color: ${({theme})=>theme.COLORS.BACKGROUND_1};
 `;
