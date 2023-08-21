@@ -3,22 +3,22 @@ import { FiPlus, FiX } from 'react-icons/fi';
 import { Container } from './styles';
 
 // eslint-disable-next-line react/prop-types
-export function NoteItem({ isNew, value, onClick, ...rest}){
+export function NoteItem({ $isNew, value, onClick, ...rest}){
   return(
-    <Container isNew={isNew}>
+    <Container $isNew={$isNew}>
       <input
       type="text"
       value={value}
-      readOnly={!isNew}
+      readOnly={!$isNew}
       {...rest}
       />
       
       <button
       type="button"
       onClick={onClick}
-      className={isNew ? 'button-add': 'button-delete'}
+      className={$isNew ? 'button-add': 'button-delete'}
       >
-      { isNew ? <FiPlus /> : <FiX />}
+      { $isNew ? <FiPlus /> : <FiX />}
       </button>
 
     </Container>

@@ -15,7 +15,6 @@ export const Container = styled.header`
 
   >div{
     display:flex;
-    flex-direction: row-reverse;
   }
 
   padding: 0 90px;

@@ -10,19 +10,12 @@ import { Container, Form, Erasemovie } from "./styles";
 import { useState } from "react";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import { HoverRating } from "../../components/HoverRating"
 
 export function New(){
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
-  const [rating, setRating] = useState("");
-  const [newRating, setNewRating] = useState("");
-  
-  function handleRating(){
-    setRating(prevState => [...prevState, newRating])
-    setNewRating("");
-  }
 
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
@@ -44,10 +37,6 @@ export function New(){
       return alert("Please enter the movie title")
     }
 
-    // if(setRating){
-    //   return alert("Please rate the movie")
-    // }
-
     if(newTag){
       return alert("It seems you forgot to apply the tag, please select the + sign or erase the tag's content")
     }
@@ -56,7 +45,7 @@ export function New(){
     await api.post("/notes", {
       title,
       description,
-      rating,
+      // rating,
       tags
     });
 
@@ -64,6 +53,8 @@ export function New(){
     navigate(-1);
   }
 
+
+  
   return(
     <Container>
       <Header />
@@ -71,7 +62,8 @@ export function New(){
         <main>
           <Form>
               <a href="/">
-                <FiArrowLeft />
+                <FiArrowLeft 
+                />
                 Back</a>
             <header>
               <h1>New Movie</h1>
@@ -81,11 +73,8 @@ export function New(){
              placeholder="Title"
              onChange={e=> setTitle(e.target.value)} 
              />
-            <Input 
-            placeholder="Rate the movie (0 to 5)"
-            onClick={handleRating}
-            onChange={e=> setNewRating(e.target.value)}
-            />
+             
+            <HoverRating />             
 
             </div>
             <Textarea 
@@ -105,7 +94,7 @@ export function New(){
                     ))  
                   }
               <NoteItem 
-              isNew 
+              $isNew 
               placeholder="New marker" 
               onChange = {e => setNewTag(e.target.value)}
               value={newTag}

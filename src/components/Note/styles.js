@@ -30,7 +30,9 @@ export const Container = styled(Link)`
   p{
     color:  ${({theme})=>theme.COLORS.GRAY_100};
     overflow: hidden;
-    height: 56px;
+    display: -webkit-box; /* Define como uma caixa flexível */
+    -webkit-line-clamp: 2; /* Limita a 2 linhas de texto */
+    -webkit-box-orient: vertical; /* Orientação vertical da caixa flexível */
   }
 
   >footer{
