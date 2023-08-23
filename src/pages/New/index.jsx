@@ -10,7 +10,27 @@ import { Container, Form, Erasemovie } from "./styles";
 import { useState } from "react";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
-import { HoverRating } from "../../components/HoverRating"
+import * as React from 'react';
+import Rating from '@mui/material/Rating';
+import Box from '@mui/material/Box';
+import StarIcon from '@mui/icons-material/Star';
+
+const labels = {
+  0.5: 'Unwatchable',
+  1: 'Unwatchable+',
+  1.5: 'Sad',
+  2: 'Sad+',
+  2.5: 'Ok',
+  3: 'Ok+',
+  3.5: 'Good',
+  4: 'Good+',
+  4.5: 'Excellent',
+  5: 'Excellent+',
+};
+
+function getLabelText(value) {
+  return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
+}
 
 export function New(){
   const navigate = useNavigate();
@@ -19,7 +39,6 @@ export function New(){
 
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
-
 
   function handleAddTag(){
     setTags(prevState => [...prevState, newTag]);
@@ -30,7 +49,7 @@ export function New(){
     setTags(prevState => prevState.filter(tag => tag !== deleted))
   }
 
-  
+
 
   async function handleNewNote(){
     if(!title){
@@ -45,7 +64,7 @@ export function New(){
     await api.post("/notes", {
       title,
       description,
-      // rating,
+      rating: value,
       tags
     });
 
@@ -53,6 +72,8 @@ export function New(){
     navigate(-1);
   }
 
+  const [value, setValue] = React.useState(2);
+  const [hover, setHover] = React.useState(-1);
 
   
   return(
@@ -74,7 +95,29 @@ export function New(){
              onChange={e=> setTitle(e.target.value)} 
              />
              
-            <HoverRating />             
+             <Box
+                sx={{
+                  width: 600,
+                }}
+              >
+                <Rating
+                  name="hover-feedback"
+                  value={value}
+                  precision={0.5}
+                  getLabelText={getLabelText}
+                  style={{color:"#FF859B"}}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                  onChangeActive={(event, newHover) => {
+                    setHover(newHover);
+                  }}
+                  emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+                />
+                {value !== null && (
+                  <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+                )}
+              </Box>   
 
             </div>
             <Textarea 

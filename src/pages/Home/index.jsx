@@ -31,66 +31,35 @@ export function Home(){
   useEffect(()=>{
     async function fecthNotes(){
       const response = await api.get(`/notes?title=${search}`);
+      // const response = await api.get(`/notes?title=${search}&tags=${search}`);
       setNotes(response.data)
     }
+
     fecthNotes();
-  }, [search]);
+  }, [tagsSelected, search]);
 
   return(
     <Container>
-      <Header />
+      <Header 
+      setSearch={setSearch}
+      />
       <Content>
       <header>My Movies</header>
-     <NewMovie to="New">
+     <NewMovie to="/new">
       <FiPlus />
       Add New Movie
      </NewMovie>
         </Content>
       <Section>
+      { 
+        notes.map(note => ( 
         <Note 
-        to="/details/29" 
-        onClick={()=>handleDetails()}
-        data= {{
-          title: 'Interstellar', 
-          tags: [
-            {id: '1', name: 'Ficção científica'},
-            {id: '2', name: 'Drama'},
-            {id: '3', name: 'Familia'}
-          ]}}
-          />
-        {/* <Note 
-        to="/details/29" 
-        onClick={()=>handleDetails()}
-        data= {{
-          title: 'Interstellar', 
-          tags: [
-            {id: '1', name: 'Ficção científica'},
-            {id: '2', name: 'Drama'},
-            {id: '3', name: 'Familia'}
-          ]}}
-          />
-        <Note 
-        to="/details/29" 
-        onClick={()=>handleDetails()}
-        data= {{
-          title: 'Interstellar', 
-          tags: [
-            {id: '1', name: 'Ficção científica'},
-            {id: '2', name: 'Drama'},
-            {id: '3', name: 'Familia'}
-          ]}}
-          />
-        <Note 
-        to="/details/29" 
-        onClick={()=>handleDetails()}
-        data= {{
-          title: 'Interstellar', 
-          tags: [
-            {id: '1', name: 'Ficção científica'},
-            {id: '2', name: 'Drama'},
-            {id: '3', name: 'Familia'}
-          ]}}
-          /> */}
+          key={String(note.id)}
+          data={note}
+          onClick={()=> handleDetails(note.id)}
+        />
+        ))
+        }
         </Section>
 
     </Container>

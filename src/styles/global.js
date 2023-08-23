@@ -32,4 +32,8 @@ button, a {
 button:hover, a:hover {
 	filter: brightness(0.9);
 }
+
+.css-1lauo1g-MuiRating-root{
+	color: ${({theme})=> theme.COLORS.PINK};
+}
 `;

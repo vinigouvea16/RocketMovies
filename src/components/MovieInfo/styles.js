@@ -17,7 +17,14 @@ export const Container = styled.button`
   padding-top: 24px;
   margin-bottom: 16px;
 
-  >h1{
+  header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  header> h1{
     flex:1;
     text-align: left;
     display: flex;
@@ -25,7 +32,7 @@ export const Container = styled.button`
     font-weight: 700;
     font-size: 36px;
     color:  ${({theme})=>theme.COLORS.WHITE};
-    padding-bottom: 24px;
+    // padding-bottom: 24px;
   }
   
   p{
@@ -46,8 +53,8 @@ export const Container = styled.button`
    
   }
   >.footer img {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     border: 1px solid  ${({theme})=>theme.COLORS.GRAY};
   }
@@ -63,10 +70,10 @@ export const Container = styled.button`
 `;
 
 
-export const Rating = styled.div`
+export const Stars = styled.div`
   display: flex;
   color: ${({theme})=> theme.COLORS.PINK};
-  font-size: 20px;
+  font-size: 15px;
   padding-left: 10px;
   gap: 10px;
 `;

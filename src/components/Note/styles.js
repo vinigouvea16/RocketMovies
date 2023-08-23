@@ -43,8 +43,11 @@ export const Container = styled(Link)`
 `;
 
 
-export const Rating = styled.div`
+export const Stars = styled.div`
   display: flex;
   color: ${({theme})=> theme.COLORS.PINK};
-  font-size: 12px;
+  >span{
+    color: ${({theme})=> theme.COLORS.PINK}!IMPORTANT;
+  }
 `;
+

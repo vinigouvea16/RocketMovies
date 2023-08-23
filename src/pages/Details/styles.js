@@ -26,18 +26,6 @@ export const Container = styled.div`
 
   `;
 
-export const Links = styled.ul`
-  list-style-type: style none;
-  
-  > li {
-    margin-top: 12px;
-  
-    a {
-    color: ${({theme})=>theme.COLORS.WHITE};
-    }
-  }
-`;
-
 export const Content = styled.div`
   margin: 0 auto;
 
@@ -46,7 +34,7 @@ export const Content = styled.div`
   > button:first-child{
     align-self: end;
   }
-  >header a{
+  >firstheader a{
     color: ${({theme})=>theme.COLORS.PINK};
     font-size: 16px;
     gap: 8px;
