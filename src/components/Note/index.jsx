@@ -9,7 +9,7 @@ import Stack from '@mui/material/Stack';
 
 
 // eslint-disable-next-line react/prop-types
-export function Note({ data, ...rest }){
+export function Note({ data, ...rest}){
   return(
     <Container {...rest}>
       <h1>{data.title}</h1>
