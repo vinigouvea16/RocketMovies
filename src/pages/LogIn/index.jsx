@@ -19,9 +19,9 @@ export function LogIn(){
     <Container>
       <Form>
         <h1>RocketMovies</h1>
-        <p>Aplicação para acompanhar tudo que assistir.</p>
+        <p>Application to track everything you watch.</p>
         
-        <h2>Faça seu login</h2>
+        <h2>Login with your account</h2>
         
         <Input 
         placeholder = "E-mail"
@@ -31,19 +31,19 @@ export function LogIn(){
         />
 
         <Input 
-        placeholder = "Senha"
+        placeholder = "Password"
         type="password"
         icon={FiLock}
         onChange={e=> setPassword(e.target.value)}
         />
 
       <Button 
-      title="Entrar"
+      title="Log in"
       onClick={handleLogIn}
       />
      
     <Link to="/register">
-      Criar conta
+      Create account
     </Link>
 
       </Form>

@@ -31,12 +31,13 @@ export const Content = styled.div`
 
   display:flex;
   flex-direction:column;
-  > button:first-child{
-    align-self: end;
-  }
-  >firstheader a{
+
+  button {
     color: ${({theme})=>theme.COLORS.PINK};
+    background: none;
+    border: none;
     font-size: 16px;
+    line-height: 21px;
     gap: 8px;
     display: flex;
     align-items: center;
@@ -53,3 +54,7 @@ export const Content = styled.div`
     text-align: justify;
   }
 `;
+
+// export const Button = styled.div`
+
+// `

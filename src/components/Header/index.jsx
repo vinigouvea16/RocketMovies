@@ -5,16 +5,28 @@ import { api } from "../../services/api";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 // import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 export function Header({search, setSearch}){
   const {logOut, user} = useAuth();
+  const navigate = useNavigate();
 
+  function handleLogOut(){
+    navigate("/")
+    logOut();
+  }
+
+  function handleHome(){
+    navigate("/");
+  }
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
   
   return(
     <Container>
-      <Brand to="/">
+      <Brand
+      onClick={handleHome}
+      >
       RocketMovies
       </Brand>
       <Input 
@@ -32,7 +44,7 @@ export function Header({search, setSearch}){
         <div>
           <strong>{user.name}</strong>
          <Logout
-         onClick={logOut}>
+         onClick={handleLogOut}>
           Log out
          </Logout>
         </div>

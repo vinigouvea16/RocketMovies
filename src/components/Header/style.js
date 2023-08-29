@@ -59,10 +59,11 @@ export const Logout = styled.button`
   color:  ${({theme})=> theme.COLORS.GRAY_100};
 `;
 
-export const Brand = styled(Link)`
+export const Brand = styled.div`
   color:  ${({theme})=> theme.COLORS.PINK};
   font-size: 24px;
   font-family: Roboto Slab;
   font-weight: 700;
   padding-left: 3px;
+  cursor: pointer;
 `;

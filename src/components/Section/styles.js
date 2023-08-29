@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   margin: 28px 5%;
-  overflow-y: scroll;
+  overflow-y: auto;
+  height: calc(100vh - 280px);
   
   /* >h2{
     color: ${({theme})=>theme.COLORS.GRAY_100};

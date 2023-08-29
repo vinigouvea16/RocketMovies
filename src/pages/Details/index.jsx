@@ -17,15 +17,14 @@ export function Details(){
 
   const navigate = useNavigate();
 
-  // function handleBack(){
-  //   navigate(-1);
-  // }
+  function handleBack(){
+    navigate(-1);
+  }
 
   useEffect(() => {
     async function fetchNote() {
       const response = await api.get(`/notes/${params.id}`)
       setData(response.data)
-      console.log(response.data)
     }
     fetchNote()
   }, [])
@@ -40,10 +39,12 @@ export function Details(){
         <Content>
          
         <header>
-        <a href="/">
+          <button
+          onClick={handleBack}
+          >
         <FiArrowLeft />
-        Voltar
-        </a>
+            Back
+          </button>
       </header>
         {/* {data.title} */}
         <MovieInfo 

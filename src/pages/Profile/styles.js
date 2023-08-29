@@ -13,6 +13,16 @@ export const Container = styled.div`
     align-items: center;
 
     padding: 0 124px;
+  
+
+    button {
+      color: ${({theme})=>theme.COLORS.PINK};
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+    }
+    
     a{
       font-size: 20px;
       color: ${({theme})=>theme.COLORS.PINK};
@@ -21,7 +31,7 @@ export const Container = styled.div`
     }
     svg{
       color: ${({theme})=>theme.COLORS.PINK};
-      font-size: 20px;
+      font-size: 30px;
     }
   } 
 `; 
