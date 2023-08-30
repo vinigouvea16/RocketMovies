@@ -16,6 +16,10 @@ export function Header({search, setSearch}){
     logOut();
   }
 
+  function handleProfile(){
+    navigate(`/profile`);
+  }
+
   function handleHome(){
     navigate("/");
   }
@@ -35,14 +39,18 @@ export function Header({search, setSearch}){
       icon={FiSearch}
       />
 
-      <Profile to="/profile">
+      <Profile
+      >
         <img
+        onClick={handleProfile}
           src={avatarUrl}
           alt={user.name}
         />
 
         <div>
-          <strong>{user.name}</strong>
+          <strong
+          
+          >{user.name}</strong>
          <Logout
          onClick={handleLogOut}>
           Log out

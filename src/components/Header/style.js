@@ -24,7 +24,7 @@ export const Container = styled.header`
 
 `;
 
-export const Profile = styled(Link)`
+export const Profile = styled.div`
   display: flex;
   flex-direction: row-reverse;
 
@@ -35,6 +35,7 @@ export const Profile = styled(Link)`
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    cursor: pointer;
     border: 1px solid  ${({theme})=>theme.COLORS.GRAY};
   }
  

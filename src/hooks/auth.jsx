@@ -26,10 +26,9 @@ function AuthProvider({children}){
     }
   }
 
-  function logOut(e){
+  function logOut(){
     localStorage.removeItem("@rocketmovies:token");
     localStorage.removeItem("@rocketmovies:user");
-    e.preventDefault();
     setData({});
   }
 
