@@ -1,11 +1,11 @@
-import { Container } from "./styles";
+import { InputGroup } from "./styles";
 
 // eslint-disable-next-line react/prop-types
 export function Input({ icon: Icon, ...rest}){
   return(
-    <Container>
+    <InputGroup>
     {Icon && <Icon size={20} />}
     <input {...rest} />
-    </Container>
+    </InputGroup>
   )
 }

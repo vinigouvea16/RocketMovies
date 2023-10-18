@@ -1,14 +1,15 @@
-
-import { Container, Content, NewMovie} from "./style";
-import { FiPlus } from "react-icons/fi"
-import { Header } from "../../components/Header";
-import { Section } from "../../components/Section";
-import { Note } from "../../components/Note";
 import { useEffect, useState } from "react";
-import { api } from "../../services/api";
+import { FiPlus } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { Header } from "../../components/Header";
+import { Note } from "../../components/Note";
+import { Section } from "../../components/Section";
+import { SideMenu } from "../../components/SideMenu";
+import { api } from "../../services/api";
+import { Container, Content, NewMovie } from "./style";
 
 export function Home(){
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [tags, setTags] = useState([]);
   const [tagsSelected, setTagsSelected] = useState([]);
   const [search, setSearch] = useState([]);
@@ -39,8 +40,14 @@ export function Home(){
 
   return(
     <Container>
+     <SideMenu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
+
       <Header 
       setSearch={setSearch}
+      onOpenMenu={() => setMenuIsOpen(true)}
       />
       <Content>
       <header>My Movies</header>

@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import * as React from 'react';
 
-
 export function Details(){
   const [data, setData] = useState();
   

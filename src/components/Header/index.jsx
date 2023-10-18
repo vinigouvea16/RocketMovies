@@ -1,13 +1,15 @@
-import { Container, Profile, Logout, Brand } from "./style";
+import { GoFilter } from 'react-icons/go';
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 import { Input } from '../../components/Input';
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
-import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
+import { Brand, Container, Logout, Menu, Profile } from "./style";
 // import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
-export function Header({search, setSearch}){
+// eslint-disable-next-line react/prop-types
+export function Header({setSearch, onOpenMenu}){
   const {logOut, user} = useAuth();
   const navigate = useNavigate();
 
@@ -28,6 +30,10 @@ export function Header({search, setSearch}){
   
   return(
     <Container>
+      <Menu onClick={onOpenMenu}>
+        <GoFilter />
+      </Menu>
+      
       <Brand
       onClick={handleHome}
       >

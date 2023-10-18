@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICE_BREAKPOINTS } from '../../styles/devideBreakpoints';
 
 export const Container = styled.div`
   width: 100%;
@@ -61,6 +62,15 @@ export const Form = styled.form`
     gap: 40px;
     margin-bottom: 40px;
   }
+  @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    display: flex;
+    flex-direction: column;
+    .inputs{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+}
 `;
 
 export const Erasemovie = styled.button`

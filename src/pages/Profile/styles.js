@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICE_BREAKPOINTS } from '../../styles/devideBreakpoints';
 
 export const Container = styled.div`
   width: 100%;
@@ -32,6 +33,9 @@ export const Container = styled.div`
     svg{
       color: ${({theme})=>theme.COLORS.PINK};
       font-size: 30px;
+    }
+    @media (max-width: ${DEVICE_BREAKPOINTS.SM}){
+      padding: 0 35px;
     }
   } 
 `; 
