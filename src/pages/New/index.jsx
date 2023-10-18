@@ -1,19 +1,20 @@
 // import { Link } from 'react-router-dom';
+import StarIcon from '@mui/icons-material/Star';
+import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
+import * as React from 'react';
+import { useState } from "react";
+import { FiArrowLeft } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
-import { Textarea } from "../../components/Textarea";
 import { NoteItem } from "../../components/NoteItem";
 import { SectionNew } from "../../components/SectionNew";
-import { Button } from "../../components/Button";
-import { FiArrowLeft } from "react-icons/fi"
-import { Container, Form, Erasemovie } from "./styles";
-import { useState } from "react";
+import { SideMenu } from "../../components/SideMenu";
+import { Textarea } from "../../components/Textarea";
 import { api } from "../../services/api";
-import { useNavigate } from "react-router-dom";
-import * as React from 'react';
-import Rating from '@mui/material/Rating';
-import Box from '@mui/material/Box';
-import StarIcon from '@mui/icons-material/Star';
+import { Container, Erasemovie, Form } from "./styles";
 
 const labels = {
   0.5: 'Unwatchable',
@@ -33,6 +34,7 @@ function getLabelText(value) {
 }
 
 export function New(){
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -78,8 +80,14 @@ export function New(){
   
   return(
     <Container>
-      <Header />
+       <SideMenu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
 
+      <Header 
+      onOpenMenu={() => setMenuIsOpen(true)}
+      />
         <main>
           <Form>
               <a href="/">

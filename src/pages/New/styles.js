@@ -10,10 +10,14 @@ export const Container = styled.div`
   grid-template-areas: 
   "header"
   "content";
-
+  @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    main{
+      padding: 40px 30px
+    }
+  }
   >main{
     grid-area: content;
-    overflow-y: auto;
+    overflow-y: auto; 
   }
   >main a{
     display: flex;

@@ -1,15 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Container, Content } from "./styles";
 
-import { Header } from "../../components/Header";
-import { FiArrowLeft } from "react-icons/fi";
-import { MovieInfo } from "../../components/MovieInfo";
-import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
 import * as React from 'react';
+import { useEffect, useState } from "react";
+import { FiArrowLeft } from "react-icons/fi";
+import { useNavigate, useParams } from "react-router-dom";
+import { Header } from "../../components/Header";
+import { MovieInfo } from "../../components/MovieInfo";
+import { SideMenu } from "../../components/SideMenu";
+import { api } from "../../services/api";
 
 export function Details(){
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [data, setData] = useState();
   
   const params = useParams();
@@ -30,7 +32,13 @@ export function Details(){
 
   return(
     <Container>
-      <Header />
+      <SideMenu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
+      <Header 
+       onOpenMenu={() => setMenuIsOpen(true)}
+       />
       {
         data &&
       

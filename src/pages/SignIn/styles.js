@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import backgroundImg from '../../assets/background.png';
-
+import { DEVICE_BREAKPOINTS } from '../../styles/devideBreakpoints';
 export const Container = styled.div`
   height: 100vh;
 
@@ -17,7 +17,10 @@ export const Form = styled.form`
   /* align-items: center; */
 
   text-align: center;
-
+  @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    margin: 0 auto;
+    padding: 0;
+  }
   >h1 {
     font-size: 48px;
     color: ${({theme})=> theme.COLORS.PINK};
@@ -52,4 +55,7 @@ export const Background = styled.div`
   background: url(${backgroundImg}) no-repeat center center;
   background-size: cover;
   opacity: 0.5;
+  @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    display: none;
+  }
 `;
