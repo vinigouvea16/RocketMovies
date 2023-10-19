@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/devideBreakpoints";
 
 export const Container = styled.div`
   width: 100%;
@@ -22,6 +23,11 @@ export const Container = styled.div`
     border-radius: 10px;
     border: 8px solid ${({theme})=>theme.COLORS.PINK};
   }
+  }
+  @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    main{
+      padding: 40px 30px;
+    }
   }
 
   `;
@@ -54,7 +60,3 @@ export const Content = styled.div`
     text-align: justify;
   }
 `;
-
-// export const Button = styled.div`
-
-// `
